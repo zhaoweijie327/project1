@@ -9,6 +9,7 @@ class FindElement:
 
     # ------------首页------------
     login = (By.CSS_SELECTOR,'#js-signin-btn') # 点击首页登录按钮
+    login_tuichu = (By.LINK_TEXT,'安全退出')  # 点击安全退出
     login_username = (By.CSS_SELECTOR,'.xa-emailOrPhone') # 输入用户名
     login_password = (By.CSS_SELECTOR,'.js-pass-pwd') # 输入密码
     login_button = (By.CSS_SELECTOR,'.xa-login') # 点击登录
