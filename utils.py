@@ -48,15 +48,15 @@ class BaseDriver:
             cls.__driver = None
 
 # 数据驱动
-def Base_Data(pathfile):
+def Base_Data(login_page):
     # 定义空列表
     data_list = []
     # 读取文件
-    with open('./data'+os.sep+pathfile,'r',encoding='utf-8') as file:
+    with open('./data' + os.sep + login_page ,'r',encoding='utf-8') as file:
         # 转化json格式
         data_json = json.load(file)
         # 遍历data_json字典的值
-        for iteam in data_json.values:
+        for iteam in data_json.values():
             data_list.append(list(iteam.values()))
     # 返回列表数据
     return data_list

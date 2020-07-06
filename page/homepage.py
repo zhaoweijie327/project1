@@ -84,6 +84,9 @@ class HomeHandles(BaseHandles):
         # 获取用户名信息断言
         return self.find_text(self.home_page.home_text())
 
+    def handle_name(self):
+        pass
+
     # 搜索功能
     def handle_sousuo(self,text):
         # 搜索输入框
@@ -97,7 +100,7 @@ class HomeHandles(BaseHandles):
         self.find_click(self.home_page.home_card())
 
 '''业务层'''
-class HomeBuisser:
+class HomeBuisser():
 
     # 初始化管理实例化操作层
     def __init__(self):
@@ -106,6 +109,10 @@ class HomeBuisser:
     # 登录功能
     def buisser_login(self,username,password):
         return self.home_handles.handle_login(username,password)
+
+    # 登录后断言
+    # def buisser_name(self):
+    #     return self.home_handles.handle_name()
 
     # 搜索功能
     def buisser_sousuo(self,text):
