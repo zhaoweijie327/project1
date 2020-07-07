@@ -110,10 +110,6 @@ class HomeBuisser():
     def buisser_login(self,username,password):
         return self.home_handles.handle_login(username,password)
 
-    # 登录后断言
-    # def buisser_name(self):
-    #     return self.home_handles.handle_name()
-
     # 搜索功能
     def buisser_sousuo(self,text):
         self.home_handles.handle_sousuo(text)

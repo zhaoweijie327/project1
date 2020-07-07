@@ -31,13 +31,14 @@ class BaseDriver:
             cls.__driver.implicitly_wait(10)
         return cls.__driver
 
-    def open_key(self,key):
+    @classmethod
+    def open_key(cls,key):
         '''
         开关模式
         :param key:
         :return:
         '''
-        self.__open_key = key
+        cls.__open_key = key
 
     @classmethod
     def close_driver(cls):

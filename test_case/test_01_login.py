@@ -1,5 +1,6 @@
 import logging
 
+import allure
 import pytest
 
 from base.find_element import FindElement
@@ -14,7 +15,7 @@ class Test_Login:
 
     def setup_class(self):
         # 实例化utils.py的工具类
-        self.driver = BaseDriver().open_driver()
+        self.driver = BaseDriver.open_driver()
 
     def setup(self):
         # 获取网址打开网页
@@ -22,9 +23,11 @@ class Test_Login:
 
     def teardown_class(self):
         # 关闭浏览器驱动
-        BaseDriver().close_driver()
+        BaseDriver.open_key(False)
+        BaseDriver.close_driver()
 
     @pytest.mark.parametrize("username,password,message",Base_Data('login_page.json'))
+    @allure.severity(allure.severity_level.NORMAL)
     def test_login(self,username,password,message):
         # 调用homepage登录的业务方法
         msg = PageInit().home_page().buisser_login(username,password)

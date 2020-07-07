@@ -43,7 +43,11 @@ class OrderHandles(BaseHandles):
     # 获取购物车页面信息
     def order_card_text(self):
         # 获取文本信息
-        return self.find_text(self.order_page.order_text())
+        try:
+            # 切换窗口
+            self.find_window(self.order_page.driver)
+        finally:
+            return self.find_text(self.order_page.order_text())
 
     # 结算提交功能
     def order_card(self):
@@ -72,4 +76,4 @@ class OrderBuisser:
     # 结算提交功能
     def order_card(self):
         # 结算提交功能
-        return self.order_card()
+        return self.order_handles.order_card()

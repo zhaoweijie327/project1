@@ -20,10 +20,10 @@ class FindElement:
     home_page_card = (By.CSS_SELECTOR,'.shop-cart-icon') # 点击购物车
 
     # ------------课程列表页面------------
-    java = (By.CSS_SELECTOR,'[data-type="战课程"]') # 点击课程
+    java = (By.CSS_SELECTOR,'[data-type="实战课程"]') # 点击课程
 
     # ------------课程详情页面------------
-    shopp_card = (By.LINK_TEXT,'加入购物车') # 点击加入购物车
+    shopp_card = (By.LINK_TEXT,'加购物车') # 点击加入购物车
     shopp_card_tupian = (By.CSS_SELECTOR,'.imv2-shopping-cart2') # 鼠标移动操作
     shopp_text = (By.CSS_SELECTOR,'.content-box h3') # 获取购物车产品信息
 

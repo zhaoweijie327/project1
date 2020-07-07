@@ -37,16 +37,20 @@ class KeHandles(BaseHandles):
     def __init__(self):
         self.ke_page = KePage()
 
-    # 登录功能
+    # 添加课程到购物车
     def ke_card(self):
         # 点击课程
         self.find_click(self.ke_page.ke_java())
-        # 添加购物车
-        self.find_click(self.ke_page.ke_gouwu_card())
-        # 移动到购物车
-        self.find_move_to(self.ke_page.driver,self.ke_page.ke_yidong_card())
-        # 获取文本信息
-        return self.find_text(self.ke_page.ke_text())
+        try:
+            # 页面窗口更换操作
+            self.find_window(self.ke_page.driver)
+        finally:
+            # 添加购物车
+            self.find_click(self.ke_page.ke_gouwu_card())
+            # 移动到购物车
+            self.find_move_to(self.ke_page.driver,self.ke_page.ke_yidong_card())
+            # 获取文本信息
+            return self.find_text(self.ke_page.ke_text())
 
 
 '''业务层'''
